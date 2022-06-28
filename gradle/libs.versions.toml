@@ -1,0 +1,34 @@
+[versions]
+kotlin = "1.7.0"
+javaVersion = "18"
+javaVersionKotlin = "18"
+springBoot = "2.7.1"
+annotations = "23.0.0"
+netty = "4.1.78.Final"
+spring = "5.3.20"
+springHateoas = "1.5.0"
+ktlint = "0.46.1"
+ktlintKotlin = "1.7.0-Beta"
+kotlinPlugin = "1.7.0-Beta"
+
+[libraries]
+kotlinBom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
+nettyBom = { module = "io.netty:netty-bom", version.ref = "netty" }
+springBom = { module = "org.springframework:spring-framework-bom", version.ref = "spring" }
+springHateoas = { module = "org.springframework.hateoas:spring-hateoas", version.ref = "springHateoas" }
+springBootBom = { module = "org.springframework.boot:spring-boot-starter-parent", version.ref = "springBoot" }
+ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
+ktlintCompiler = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "ktlintKotlin" }
+ktlintStdlibJdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "ktlintKotlin" }
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+
+[bundles]
+ktlint = ["ktlint", "ktlintStdlibJdk8", "ktlintCompiler"]
+
+[plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinPlugin" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlinPlugin" }
+kotlinAllopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlinPlugin" }
+kotlinNoarg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlinPlugin" }
+kotlinJpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlinPlugin" }
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
