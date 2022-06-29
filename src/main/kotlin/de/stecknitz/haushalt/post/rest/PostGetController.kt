@@ -18,8 +18,9 @@ class PostGetController(val readService: PostReadService) {
 
     @GetMapping(produces = [APPLICATION_JSON_VALUE])
     suspend fun findAll():  ResponseEntity<List<Post>>? {
-        logger.debug("FindAll: ")
+        logger.debug("findAll")
         val posts = readService.findAll()
+        logger.debug("findAll: {}", posts)
         return ok(posts)
     }
 
